@@ -68,7 +68,8 @@ p {
     height: 200px;
     width: 600px;
     padding: 20px;
-    border-radius: 5px;
+    margin: 20px auto;
+    border-radius: 10px;
     background: rgba(255, 255, 255, 0.089);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(6.7px);
@@ -79,7 +80,7 @@ p {
 
 .result {
     color: #FFFFFF;
-    margin: auto;
+    margin: 10px auto 25px auto;
 }
 
 
@@ -93,7 +94,7 @@ p {
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 button {
