@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #3a3782;
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    text-align: center;
+    justify-items: center;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    width: 80%;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.089);
+    border-radius: 0 0 26px 26px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    color: #FFFFFF;
+}
+
+p {
+    font-weight: bold;
+    color: #ffffff92;
+    padding: 5px;
+}
+
+.item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* horizontal */
+    align-items: center;
+    /* vertical */
+    text-align: center;
+}
+
+#empate {
+    color: rgb(255, 213, 0);
+}
+
+
+.middle-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 85px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.display-choice {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    height: 240px;
+    width: 600px;
+    padding: 20px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.089);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+    color: #FFFFFF;
+}
+
+.result {
+    color: #FFFFFF;
+    margin: auto;
+}
+
+
+
+
+.bottom-container {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+button {
+    flex: 1;
+    height: 200px;
+    width: 300px;
+    font-size: 50px;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: rgb(255, 255, 255);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.7px);
+    -webkit-backdrop-filter: blur(6.7px);
+    border: 1px solid rgba(255, 255, 255, 0.19);
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+#stone {
+    background-color: #4e5869bd;
+}
+
+#paper {
+    background-color: #1a5ef2b1;
+}
+
+#scissors {
+    background-color: #ec212bc0;
+}
+
+.display-my-choice img,
+.display-alexa-choice img {
+    
+    animation: pop 0.3s ease;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
