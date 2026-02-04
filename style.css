@@ -139,17 +139,29 @@ button:hover {
 }
 
 
-.loader{
-    width: 60px;
-    height: 60px;
-    margin: 0px auto;
-    border: 5px solid rgb(0, 85, 255);
-    border-radius: 50%;
-    border-top: 5px solid white ;
-    animation: spin 1s infinite linear;  
-    display: none;
+.jokenpo-mode {
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, #FFD700, #FF8C00);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+.shake {
+  animation: shake 0.2s ease;
 }
 
+@keyframes shake {
+  0%   { transform: translateX(0); }
+  20%  { transform: translateX(-6px); }
+  40%  { transform: translateX(6px); }
+  60%  { transform: translateX(-4px); }
+  80%  { transform: translateX(4px); }
+  100% { transform: translateX(0); }
+}
 
 
 @keyframes spin {
@@ -187,13 +199,16 @@ button:hover {
     .bottom-container {
         display: flex;
         flex-direction: column;
-        gap: 15px;
-        margin: 35px auto;
+        gap: 10px;
+        margin: 20px auto;
         width: 100%;
     }
-
+    .bottom-container {
+        display: flex;
+        flex-direction: row;
+    }
     button {
-        width: 90%;
+        width: 30%;
         max-width: none;
         height: 120px;
     }
