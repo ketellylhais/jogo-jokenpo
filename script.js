@@ -4,6 +4,8 @@ const alexaScore = document.querySelector('#alexa-score')
 const empate = document.querySelector('#empate')
 const displayMyChoices = document.querySelector('.display-my-choice')
 const displayAlexaChoices = document.querySelector('.display-alexa-choice')
+const loaders = document.querySelectorAll('.loader')
+
 const images = {
     stone: 'assets/rochas.png',
     paper: 'assets/paper.png',
@@ -16,7 +18,13 @@ let alexScore = 0
 let empateScore = 0
 
 const playHuman = (humanChoice) => {
-    playTheGame(humanChoice, playMachine())
+    showLoading()
+
+    setTimeout(() => {
+        const machineChoice = playMachine()
+        playTheGame(humanChoice, machineChoice)
+        hideLoading()
+    }, 1000)
 
 }
 const playMachine = () => {
@@ -51,6 +59,18 @@ const playTheGame = (human, machine) => {
 }
 
 
+function showLoading() {
+  loaders.forEach(loader => loader.style.display = 'block')
+  displayMyChoices.style.display = 'none'
+  displayAlexaChoices.style.display = 'none'
+  resultDiv.innerHTML = ''
+}
+
+function hideLoading() {
+  loaders.forEach(loader => loader.style.display = 'none')
+  displayMyChoices.style.display = 'block'
+  displayAlexaChoices.style.display = 'block'
+}
 
 
 
