@@ -18,13 +18,15 @@ let alexScore = 0
 let empateScore = 0
 
 const playHuman = (humanChoice) => {
-    showLoading()
+    // inicia animação JO-KEN-PÔ
+    showJokenpoText()
+    resultDiv.textContent = ''
 
+    // espera o "PÔ" para jogar
     setTimeout(() => {
         const machineChoice = playMachine()
         playTheGame(humanChoice, machineChoice)
-        hideLoading()
-    }, 1000)
+    }, 850)
 
 }
 const playMachine = () => {
@@ -39,12 +41,15 @@ const playTheGame = (human, machine) => {
     console.log(`Humano: ${human} Maquina: ${machine}`)
     if (human === machine) {
         resultDiv.innerHTML = "Deu empate!"
+        resultDiv.style.color = 'white'
         empateScore++
     } else if (human === 'paper' && machine === 'stone' || human === 'stone' && machine === 'scissors' || human === 'scissors' && machine === 'paper') {
-        resultDiv.innerHTML = "Você ganhou!"
+        resultDiv.innerHTML = "Você ganhou :)"
+        resultDiv.style.color = '#28ff02'
         playerScore++
     } else {
-        resultDiv.innerHTML = "Alexa ganhou!"
+        resultDiv.innerHTML = "Alexa ganhou ;("
+        resultDiv.style.color = '#ff8000'
         alexScore++
     }
     myScore.innerHTML = playerScore
@@ -58,19 +63,34 @@ const playTheGame = (human, machine) => {
 
 }
 
+function showJokenpoText() {
+  displayMyChoices.classList.add('jokenpo-mode')
+  displayAlexaChoices.classList.add('jokenpo-mode')
 
-function showLoading() {
-  loaders.forEach(loader => loader.style.display = 'block')
-  displayMyChoices.style.display = 'none'
-  displayAlexaChoices.style.display = 'none'
-  resultDiv.innerHTML = ''
+  displayMyChoices.textContent = 'JO'
+  displayAlexaChoices.textContent = 'JO'
+
+  setTimeout(() => {
+    displayMyChoices.textContent = 'KEN'
+    displayAlexaChoices.textContent = 'KEN'
+  }, 300)
+
+  setTimeout(() => {
+    displayMyChoices.textContent = 'PÔ'
+    displayAlexaChoices.textContent = 'PÔ'
+
+    displayMyChoices.classList.remove('shake')
+    displayAlexaChoices.classList.remove('shake')
+
+    displayMyChoices.offsetWidth
+    displayAlexaChoices.offsetWidth
+
+    displayMyChoices.classList.add('shake')
+    displayAlexaChoices.classList.add('shake')
+  }, 500)
 }
 
-function hideLoading() {
-  loaders.forEach(loader => loader.style.display = 'none')
-  displayMyChoices.style.display = 'block'
-  displayAlexaChoices.style.display = 'block'
-}
+
 
 
 
